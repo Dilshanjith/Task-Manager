@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { auth } from './firebase';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5231/api';
+const API_URL = 'http://localhost:5231/api'; // Corrected port to match launchSettings.json
 
 const api = axios.create({
   baseURL: API_URL,
