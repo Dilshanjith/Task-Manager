@@ -34,10 +34,16 @@ Before you begin, ensure you have the following installed:
 
 ### 2. Apply Migrations
 Navigate to the `Backend` directory and run:
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+Then run:
+
 ```bash
 dotnet ef database update
 ```
-*Note: If you don't have `dotnet-ef` installed, run `dotnet tool install --global dotnet-ef`.*
+
 
 ### 3. Run the Backend
 ```bash
@@ -56,15 +62,23 @@ npm install
 ```
 
 ### 2. Firebase Configuration
-The application uses Firebase for authentication. The configuration is located in `Frontend/src/services/firebase.ts`. 
+The application uses Firebase for authentication. Environment variables are used to keep credentials out of the source code.
 
-To use your own Firebase project:
 1. Go to the [Firebase Console](https://console.firebase.google.com/).
 2. Create a new project.
 3. Enable **Email/Password** authentication in the "Authentication" section.
-4. Add a "Web App" to your Firebase project and copy the `firebaseConfig` object.
-5. Replace the `firebaseConfig` in `Frontend/src/services/firebase.ts`.
-6. Update the `ProjectId` in `Backend/appsettings.json` to match your Firebase Project ID.
+4. Add a "Web App" to your Firebase project.
+5. In the `Frontend` directory, create a file named `.env`.
+6. Add your Firebase credentials to the `.env` file using the following format:
+   ```env
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
+7. Update the `ProjectId` in `Backend/appsettings.json` to match your Firebase Project ID.
 
 ### 3. Run the Frontend
 ```bash
