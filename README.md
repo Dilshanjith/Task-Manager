@@ -9,7 +9,7 @@ You can access the application instantly using the live link:
 
 **👉 [Live App: task-manager-six-xi-93.vercel.app](https://task-manager-six-xi-93.vercel.app/)**
 
-⚠️ **This version is fully deployed and connected to a live backend. No setup required.**
+⚠️ **You are only need to Run Backend Locally. **
 
 ---
 

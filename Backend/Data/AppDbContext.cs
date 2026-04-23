@@ -8,5 +8,6 @@ namespace backend_aspnet.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<TaskItem> Tasks { get; set; } = null!;
+        public DbSet<OtpCode> OtpCodes { get; set; } = null!;
     }
 }
