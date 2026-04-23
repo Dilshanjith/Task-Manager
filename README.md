@@ -2,6 +2,17 @@
 
 A full-stack task management application built with **React (Frontend)**, **ASP.NET Core (Backend)**, **MySQL (Database)**, and **Firebase (Authentication)**.
 
+---
+
+## 🚀 Live Demo
+You can access the application instantly using the live link:
+
+**👉 [Live App: task-manager-six-xi-93.vercel.app](https://task-manager-six-xi-93.vercel.app/)**
+
+⚠️ **You are only need to Run Backend Locally. **
+
+---
+
 ## Project Structure
 - `/Frontend`: React + Vite application.
 - `/Backend`: ASP.NET Core Web API.
