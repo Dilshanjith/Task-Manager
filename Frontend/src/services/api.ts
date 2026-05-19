@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { auth } from './firebase';
 
-const API_URL = 'https://task-manager-h5ga.onrender.com'; // Corrected port to match launchSettings.json
+const API_URL = 'http://localhost:5231'; // Corrected port to match launchSettings.json
 
 const api = axios.create({
   baseURL: API_URL,
