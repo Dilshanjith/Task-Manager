@@ -60,9 +60,16 @@ builder.Services.AddCors(options =>
                           .AllowAnyHeader());
 });
 
+using Microsoft.AspNetCore.HttpOverrides;
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -71,7 +78,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAll");
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); // Commented out for Render deployment to avoid redirect loops
 
 app.UseAuthentication();
 app.UseAuthorization();
