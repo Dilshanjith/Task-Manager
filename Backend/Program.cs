@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using backend_aspnet.Services;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,8 +60,6 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowAnyHeader());
 });
-
-using Microsoft.AspNetCore.HttpOverrides;
 
 var app = builder.Build();
 
