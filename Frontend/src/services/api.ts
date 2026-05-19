@@ -25,10 +25,10 @@ export interface Task {
 }
 
 export const taskService = {
-  getTasks: () => api.get<Task[]>('/tasks'),
-  createTask: (data: { title: string; description?: string }) => api.post<Task>('/tasks', data),
-  updateTask: (id: number, data: Partial<Task>) => api.put<Task>(`/tasks/${id}`, data),
-  deleteTask: (id: number) => api.delete(`/tasks/${id}`),
+  getTasks: () => api.get<Task[]>('/api/tasks'),
+  createTask: (data: { title: string; description?: string }) => api.post<Task>('/api/tasks', data),
+  updateTask: (id: number, data: Partial<Task>) => api.put<Task>(`/api/tasks/${id}`, data),
+  deleteTask: (id: number) => api.delete(`/api/tasks/${id}`),
 };
 
 export default api;
